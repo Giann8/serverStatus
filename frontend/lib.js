@@ -28,5 +28,5 @@ function showStatus(response) {
 
 function refresh() {
     getStatus()
-    setTimeout(refresh, 5000)
+    setTimeout(refresh, 20000)
 }
