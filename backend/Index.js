@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const mcping = require('mcping-js');
+const cors = require('cors');
+app.use(cors());
 
 const server = new mcping.MinecraftServer('100.127.73.115', 25565)
 
@@ -15,11 +17,15 @@ app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 })
 
-server.ping(timeout,protocolVersion, (err, res) => {
-    if(err) {
-        console.log(err)
-        return
-    }
-    console.log(res)
-})
+
+app.get("/ping", (req, res) => {
+    server.ping(timeout, protocolVersion, (err, instance) => {
+        if (err) {
+            res.status(500).json({ error: "error while pinging" })
+        } else {
+            console.log(instance)
+            res.status(200).json(instance)
+        }
+    })
+});
 
