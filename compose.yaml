@@ -4,7 +4,7 @@ services:
     environment:
      S_PORT : ${S_PORT}
 
-     build: ./frontend
+    build: ./frontend
 
     ports:
       - "3001:${W_PORT}"
