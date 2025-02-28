@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "lib.js",
   "scripts": {
-    "start": "npx http-server -p 3001 -o --cors"
+    "start": "npx http-server -p 3001 --cors"
   },
   "keywords": [],
   "author": "",
