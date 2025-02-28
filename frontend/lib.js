@@ -8,7 +8,6 @@ function getStatus() {
             }
         })
         .then(response => showStatus(response))
-        .catch(error => console.log(error));
 }
 
 function showStatus(response) {
@@ -19,14 +18,18 @@ function showStatus(response) {
     if (response == null) {
         status.innerHTML = "Server is offline"
         players.innerHTML = "0"
+        status.classList.remove('status-online');
+        status.classList.add('status-offline');
         return
     }
 
     status.innerHTML = "Online"
+    status.classList.remove('status-offline');
+    status.classList.add('status-online');
     players.innerHTML = response.players.online+"/"+response.players.max
 }
 
 function refresh() {
-    getStatus()
-    setTimeout(refresh, 20000)
+    showStatus(getStatus())
+    setInterval(getStatus, 10000);
 }

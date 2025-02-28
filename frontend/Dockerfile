@@ -1,5 +1,5 @@
 FROM node:latest as development
-WORKDIR /app/frontend
+WORKDIR /app/frontend/
 RUN npm init -y
 COPY package.json .
 RUN npm install

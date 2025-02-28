@@ -5,11 +5,18 @@ services:
     build: ./frontend
 
     ports:
-      - "3001:3001"
+      - "3001:${W_PORT}"
 
   server:
+
+    environment:
+      S_PORT : 3000 #container internal port
+      MSERVER_IP : 100.127.73.115 #add your minecraft server ip before running
+      MSERVER_PORT : 25565 #default minecraft server port
+      PROTOCOL_VERSION : 185 #default minecraft protocol version (latest)
+      TIMEOUT : 5000  #timeout in milliseconds, customiseable
 
     build: ./backend
 
     ports:
-      - "3000:3000"
+      - "3000:${S_PORT}"
