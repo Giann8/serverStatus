@@ -1,0 +1,19 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "lib.js",
+  "scripts": {
+    "start": "npx http-server -p 3001 -o --cors"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
