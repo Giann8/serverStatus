@@ -1,9 +1,8 @@
-require('dotenv').config();
-
-const S_PORT = process.env.S_PORT ;
+const S_PORT = 3000;
 
 function getStatus() {
-    fetch(`http://localhost:${S_PORT}/ping`)
+    console.log("fetching port " + S_PORT)
+    fetch(`http://localhost:` + S_PORT + `/ping`)
         .then(response => {
             if (response.status == 200) {
                 return response.json()
@@ -12,6 +11,8 @@ function getStatus() {
             }
         })
         .then(response => showStatus(response))
+
+        .catch(error => { showStatus(null); console.log(error) })
 }
 
 function showStatus(response) {
@@ -30,10 +31,10 @@ function showStatus(response) {
     status.innerHTML = "Online"
     status.classList.remove('status-offline');
     status.classList.add('status-online');
-    players.innerHTML = response.players.online+"/"+response.players.max
+    players.innerHTML = response.players.online + "/" + response.players.max
 }
 
 function refresh() {
-    showStatus(getStatus())
+    getStatus();
     setInterval(getStatus, 10000);
 }

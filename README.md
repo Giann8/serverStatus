@@ -1,4 +1,4 @@
-# serverStatus.github.io
+# ServerStatus
 
 ## Description
 - This repo contains a little website for checking personal minecraft server online status and players.
@@ -14,7 +14,9 @@ change the compose.yml file with the environment for your Minecraft server (sign
 docker compose -d up
 ```
 
-then you can check the status of your minecraft server at <code>http://127.0.0.1:3001</code> .
+then you can check the status of your minecraft server at <code>http://127.0.0.1:3001/index.html</code> .
 
-you can change the ports in <code>.env</code> as you like.
+you can change the port of the webpage in <code>.env</code> as you like.
+
+> [!Warning]: if you change the server side port <code>(S_PORT) </code> remember to change it in the client side code.
 
