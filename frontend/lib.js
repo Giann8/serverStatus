@@ -1,5 +1,9 @@
+require('dotenv').config();
+
+const S_PORT = process.env.S_PORT ;
+
 function getStatus() {
-    fetch('http://localhost:3000/ping')
+    fetch(`http://localhost:${S_PORT}/ping`)
         .then(response => {
             if (response.status == 200) {
                 return response.json()
