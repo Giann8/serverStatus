@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(S_PORT, () => {
-    console.log(`Example app listening at http://localhost:${S_PORT}`);
+    console.log(`Example app listening at http://${S_IP}:${S_PORT}`);
 })
 
 
