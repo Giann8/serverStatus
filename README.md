@@ -8,7 +8,7 @@ After cloning the repo, enter the directory with:
 ```
 cd ServerStatus
 ```
-change the compose.yml file with the environment for your Minecraft server (signed with <code># TO CHANGE</code>) and then do:
+change the compose.yml and the .env file with the environment for your Minecraft server (signed with <code># TO CHANGE</code>) and then do:
 
 ```
 docker compose -d up --build
