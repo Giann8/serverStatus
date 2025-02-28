@@ -33,7 +33,7 @@ function showStatus(response) {
     players.innerHTML = response.players.online+"/"+response.players.max
 }
 
-function refresh() {
+export function refresh() {
     showStatus(getStatus())
     setInterval(getStatus, 10000);
 }
