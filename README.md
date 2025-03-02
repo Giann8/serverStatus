@@ -22,4 +22,4 @@ you can change the port of the webpage in <code>.env</code> as you like.
 
 ---
 ## To-do
-- [ ] #1
+- [ ] Change package from mcping-js to mcstatus-util
