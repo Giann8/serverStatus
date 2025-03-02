@@ -20,3 +20,6 @@ you can change the port of the webpage in <code>.env</code> as you like.
 
 > [!WARNING]: if you change the server side port <code>(S_PORT)</code> remember to change it in the client side code.
 
+---
+## To-do
+- [ ] #1
