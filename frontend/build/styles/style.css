@@ -12,15 +12,16 @@ body {
     text-align: center;
 }
 .container {
-    padding: 20px;
+    padding: 40px;
+    margin: 20px 20px;
 }
 .card {
+    min-width: 250px;
     background-color: #444;
-    padding: 20px;
-    margin: 20px 500px;
+    padding: 40px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
+    }
 .card h3 {
     margin-top: 0;
 }
