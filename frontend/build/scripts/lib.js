@@ -1,4 +1,6 @@
 const S_PORT = 3000;
+const S_IP = "172.28.0.2";
+const REF_TIMEOUT = 10000;
 
 function getStatus() {
     console.log("fetching port " + S_PORT)
@@ -12,7 +14,7 @@ function getStatus() {
         })
         .then(response => showStatus(response))
 
-        .catch(error => { showStatus(null); console.log(error) })
+        .catch(error => { showStatus(null); console.log("errore"+error) })
 }
 
 function showStatus(response) {

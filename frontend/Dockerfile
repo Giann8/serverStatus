@@ -1,8 +1,8 @@
-FROM node:latest as development
-WORKDIR /app/frontend/
-RUN npm init -y
-COPY package.json .
-RUN npm install
+FROM nginx:latest as dev
+WORKDIR /app/frontend
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+FROM dev as prod
+
 COPY . .
-EXPOSE 3001
-CMD ["npm","start"]
