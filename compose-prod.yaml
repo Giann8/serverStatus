@@ -9,9 +9,6 @@ services:
     build:
       context: ./frontend
       target: prod
-
-    volumes:
-      - ./frontend:/app/frontend
       
     ports:
       - "8080:80"
@@ -31,9 +28,6 @@ services:
     build:
       context: ./backend
       target: prod
-
-    volumes:
-      - ./backend/src:/app/backend/src
 
     restart: unless-stopped
 

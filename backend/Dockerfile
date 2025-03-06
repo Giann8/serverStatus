@@ -12,4 +12,4 @@ CMD ["nodemon", "src/Index.js"]
 
 FROM base as prod
 COPY . .
-CMD ["node", "Index.js"]
+CMD ["node", "src/Index.js"]
