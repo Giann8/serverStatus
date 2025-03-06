@@ -1,31 +1,41 @@
-networks:
-  my-net:
-
-
 services:
   web:
+
+    container_name: frontend
+
     environment:
       REF_TIMEOUT: 10000
 
-    build: ./frontend
+    build:
+      context: ./frontend
+      target: prod
 
+    volumes:
+      - ./frontend:/app/frontend
+      
     ports:
       - "8080:80"
 
     restart: unless-stopped
 
-    networks:
-      - my-net
 
-  bweb:
+  backend:
+
+    container_name: backend
+
     environment:
       MSERVER_IP: 100.127.73.115 #TO CHANGE #add your minecraft server ip before running
       MSERVER_PORT: 25565 #TO CHANGE (if not default) #default minecraft server port
       PROTOCOL_VERSION: 185 #TO CHANGE #default minecraft protocol version (latest)
 
-    build: ./backend
+    build:
+      context: ./backend
+      target: prod
+
+    volumes:
+      - ./backend/src:/app/backend/src
 
     restart: unless-stopped
 
-    networks:
-      - my-net
+    ports:
+      - "3000:3000"
