@@ -1,10 +1,10 @@
 const S_PORT = 3000;
-const S_IP = "172.28.0.2";
+const S_IP = "localhost"; // to modify for external usage
 const REF_TIMEOUT = 10000;
 
 function getStatus() {
     console.log("fetching port " + S_PORT)
-    fetch(`http://localhost:` + S_PORT + `/ping`)
+    fetch("http://"+S_IP+":" + S_PORT + "/ping")
         .then(response => {
             if (response.status == 200) {
                 return response.json()
